@@ -8,7 +8,8 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: #000;
+    background: #000 url('img.jpg') no-repeat center center;
+    background-size: cover;
   }
   /* Fondo = tu foto de la PS4 con graffiti */
   .fondo-ps4 {
@@ -16,10 +17,20 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    background-image: url('fondo.jpg');
+    background-image: url('img.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+  /* El exploit se carga encima, sin cambiar de pagina, asi la foto no se quita */
+  #exploit-frame {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: transparent;
+    z-index: 10;
   }
   #menu {
     position: fixed;
@@ -87,8 +98,20 @@ var histlength=history.length;history.go(-histlength 2);
 <div class="fondo-ps4"></div>
 
 <div id=menu>
-  <button class="btn btn-multi btn-ps4-original" onclick="location.replace('g2all/index.html')">DALE PARA JUGAR</button>
+  <button class="btn btn-multi btn-ps4-original" onclick="irAJugar()">DALE PARA JUGAR</button>
 </div>
 
+<script>
+function irAJugar(){
+  // No usamos location.replace para no salir de esta pagina y no perder la foto
+  document.getElementById('menu').style.display = 'none';
+  // El fondo sigue puesto, el exploit se abre encima en un iframe
+  var f = document.createElement('iframe');
+  f.id = 'exploit-frame';
+  f.src = 'g2all/index.html';
+  f.allow = 'autoplay';
+  document.body.appendChild(f);
+}
+</script>
 </body>
 </html>
