@@ -8,6 +8,28 @@
     right: 20px;
     text-align: right;
   }
+  /* Boton estilo original PS4 */
+  .btn-ps4 {
+    font-size: 28px !important;
+    padding: 18px 40px !important;
+    width: 90% !important;
+    max-width: 700px;
+    height: auto;
+    line-height: 1.2;
+    white-space: normal;
+    text-transform: uppercase !important;
+    background: linear-gradient(180deg, #2a2a2a, #0a0a0a) !important;
+    background-color: #111 !important;
+    color: #ffffff !important;
+    border: 1px solid #333 !important;
+    border-radius: 50px !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 4px 12px rgba(0,0,0,0.6) !important;
+    cursor: pointer;
+  }
+  .btn-ps4:active {
+    background: #000 !important;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.8) !important;
+  }
 </style>
 </head>
 <body>
@@ -18,8 +40,7 @@ var histlength=history.length;history.go(-histlength 2);
 <hr>
 <br>
 <div id=menu>
-<h1 style="font-size: 32px !important; color: white !important;">Pulsa para liberar</h1>
-<button class="btn btn-multi" style="font-size: 32px !important; padding: 30px 20px !important; width: 90% !important; max-width: 700px; height: auto; line-height: 1.2; white-space: normal; background-color: #87CEEB !important; background: #87CEEB !important; color: #FF0000 !important; border: 3px solid #00BFFF !important;" onclick="location.replace('g2all/index.html')">Dispara aqui Oscar y viciate</button>
+<button class="btn btn-multi btn-ps4" onclick="location.replace('g2all/index.html')">DALE PARA JUGAR</button>
 <br>
 </div>
 </body>
