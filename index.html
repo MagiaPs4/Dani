@@ -30,17 +30,18 @@
   .btn-ps4-original {
     pointer-events: auto;
     position: absolute;
-    /* Justo encima de "Vamos al vicio gratuito" */
+    /* Justo encima de "Vamos al vicio gratuito" - ancho a ras de DALE PARA JUGAR */
     left: 50%;
-    top: 49.5%;
-    width: 34%;
-    max-width: 520px;
-    height: 68px;
+    top: 50.8%;
+    width: auto;
+    max-width: none;
+    height: 52px;
+    padding: 0 18px;
     /* Plano y centrado, ya no pegado a la carcasa */
     transform: translateX(-50%);
     transform-origin: center center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -68,9 +69,10 @@
   @media (max-width: 700px) {
     .btn-ps4-original {
       left: 50%;
-      top: 50.5%;
-      width: 72%;
-      height: 50px;
+      top: 51.5%;
+      width: auto;
+      height: 42px;
+      padding: 0 14px;
       font-size: 14px;
     }
   }
