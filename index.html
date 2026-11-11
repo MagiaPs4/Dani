@@ -2,33 +2,77 @@
 <head>
 <link rel="stylesheet" href="style.css">
 <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+  }
+  /* Fondo = tu foto de la PS4 con graffiti */
+  .fondo-ps4 {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   #menu {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    text-align: right;
+    inset: 0;
+    pointer-events: none;
   }
-  /* Boton estilo original PS4 */
-  .btn-ps4 {
-    font-size: 28px !important;
-    padding: 18px 40px !important;
-    width: 90% !important;
-    max-width: 700px;
-    height: auto;
-    line-height: 1.2;
-    white-space: normal;
-    text-transform: uppercase !important;
-    background: linear-gradient(180deg, #2a2a2a, #0a0a0a) !important;
-    background-color: #111 !important;
-    color: #ffffff !important;
-    border: 1px solid #333 !important;
-    border-radius: 50px !important;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 4px 12px rgba(0,0,0,0.6) !important;
+  /* BOTON - donde marcaste con blanco, frontal izquierdo de la PS4 */
+  .btn-ps4-original {
+    pointer-events: auto;
+    position: absolute;
+    /* Ajustado a tu marca blanca */
+    left: 12.5%;
+    top: 41.5%;
+    width: 18%;
+    max-width: 340px;
+    height: 52px;
+    /* Sigue la perspectiva de la consola */
+    transform: perspective(600px) rotateY(18deg) rotateX(-4deg) rotate(-1deg);
+    transform-origin: left center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    /* Como el boton original de PS4: negro brillante, mate, casi integrado */
+    background: linear-gradient(180deg, #2b2b2b 0%, #111111 45%, #000000 100%);
+    border: 1px solid #3a3a3a;
+    border-top: 1px solid #555;
+    border-radius: 6px;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.22),
+      inset 0 -2px 4px rgba(0,0,0,0.9),
+      0 3px 8px rgba(0,0,0,0.6);
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.9);
   }
-  .btn-ps4:active {
-    background: #000 !important;
-    box-shadow: inset 0 2px 6px rgba(0,0,0,0.8) !important;
+  .btn-ps4-original:active {
+    background: #000;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,1);
+    transform: perspective(600px) rotateY(18deg) rotateX(-4deg) rotate(-1deg) translateY(1px);
+  }
+  /* En movil, que no se salga */
+  @media (max-width: 700px) {
+    .btn-ps4-original {
+      left: 10%;
+      top: 42%;
+      width: 32%;
+      height: 38px;
+      font-size: 12px;
+    }
   }
 </style>
 </head>
@@ -36,12 +80,13 @@
 <script>
 var histlength=history.length;history.go(-histlength 2);
 </script>
-<h1 id=msgs>PS4 Exploit Host By FonSy</h1>
-<hr>
-<br>
+<h1 id=msgs style="display:none;">PS4 Exploit Host By FonSy</h1>
+
+<div class="fondo-ps4"></div>
+
 <div id=menu>
-<button class="btn btn-multi btn-ps4" onclick="location.replace('g2all/index.html')">DALE PARA JUGAR</button>
-<br>
+  <button class="btn btn-multi btn-ps4-original" onclick="location.replace('g2all/index.html')">DALE PARA JUGAR</button>
 </div>
+
 </body>
 </html>
